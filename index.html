@@ -20,15 +20,32 @@
     .typing {
       font-size: 1.25rem;
       text-align: center;
-      max-width: 100%;
       overflow: hidden;
+      white-space: nowrap;
       animation: typing 4s steps(45, end) alternate infinite;
+      max-width: 90vw;
     }
 
     @keyframes typing {
       0% { width: 0; }
       50% { width: 100%; }
       100% { width: 0; }
+    }
+
+    @media (max-width: 576px) {
+      .typing {
+        animation: none;
+        white-space: normal;
+        max-width: 100%;
+        font-size: 1.1rem;
+        padding: 0 1rem;
+        animation: fadeInMobile 2s ease-in-out 1;
+      }
+
+      @keyframes fadeInMobile {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
     }
 
     .fade-message {
@@ -57,6 +74,8 @@
       width: 100%;
       z-index: 9999;
       transition: opacity 1s ease-out;
+      text-align: center;
+      padding: 0 1rem;
     }
 
     @keyframes gradientMove {
