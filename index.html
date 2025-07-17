@@ -13,13 +13,15 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
   <style>
+    html, body {
+      overflow-x: hidden;
+    }
+
     .typing {
-      overflow: hidden;
-      white-space: nowrap;
-      font-size: 1.5rem;
-      width: 0;
-      max-width: 90vw;
+      font-size: 1.25rem;
       text-align: center;
+      max-width: 100%;
+      overflow: hidden;
       animation: typing 4s steps(45, end) alternate infinite;
     }
 
@@ -145,19 +147,31 @@
       font-size: 2rem;
     }
 
-    @media (min-width: 768px) {
-      .animated-text {
-        font-size: 2.5rem;
-      }
-    }
-
     .animated-subtext {
       font-size: 1rem;
     }
 
     @media (min-width: 768px) {
+      .animated-text {
+        font-size: 2.5rem;
+      }
+
       .animated-subtext {
         font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .resume-section {
+        padding: 1rem;
+      }
+
+      .animated-text {
+        font-size: 1.5rem;
+      }
+
+      .animated-subtext {
+        font-size: 1rem;
       }
     }
 
